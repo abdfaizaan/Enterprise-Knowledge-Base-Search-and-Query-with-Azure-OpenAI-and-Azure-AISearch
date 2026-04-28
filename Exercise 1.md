@@ -1,6 +1,8 @@
 # Exercise 1: Embedding Creation
 
-### Estimated Duration: 120 Minutes
+#### Estimated Duration: 120 Minutes
+
+## Overview
 
 In this exercise, you will gain hands-on experience in setting up a comprehensive Azure-based environment for embedding creation and document processing. The exercise is structured into two main parts:
 
@@ -8,27 +10,32 @@ In this exercise, you will gain hands-on experience in setting up a comprehensiv
 
 - **Deploying Azure Functions:** You will implement Azure Functions to automate and optimize the document processing pipeline. This involves configuring functions to handle document extraction, translation, embedding generation, and query processing.
 
-## Lab objectives
+## Objectives
 
 In this exercise, you will complete the following tasks:
 
-- Task 1: Deploy Azure OpenAI and Models
+- Task 1: Deploy Azure OpenAI Resource and Models
+  - Task 1.1: Deploy Azure OpenAI Resource
+  - Task 1.2: Deploy Models in Microsoft Foundry portal
 - Task 2: Create Azure AI Search Resources
-- Task 3: Deploy Azure Function with Embeddings
+  - Task 2.1: Create AI Search Service
+  - Task 2.2: Create Document Intelligence Resource
+  - Task 2.3: Create Translator Resource
+- Task 3: Deploy Azure Function with Embeddings  
 
-## Task 1: Deploy Azure OpenAI and Models
+### Task 1: Deploy Azure OpenAI Resource and Models
 
 In this task, you will begin by deploying an Azure OpenAI resource through the Azure portal. This involves creating an OpenAI resource, configuring it with the appropriate settings, and deploying models such as **gpt-4.1** and **text-embedding-ada-002** using Azure AI Foundry portal.
 
 Azure OpenAI offers a web-based portal called **Microsoft Foundry portal** for deploying, managing, and exploring models. Follow these steps to deploy a model using Microsoft Foundry portal:
 
-### Deploy Azure OpenAI Resource
+### Task 1.1: Deploy Azure OpenAI Resource
 
 1. On the Azure portal, type **Azure OpenAI (1)** in the search box and select **Azure OpenAI (2)** from the results.
 
-    ![](./media/lab1-12-01.png)
+    ![](./media/E1T1S1-2804.png)
 
-1. On the **Microsoft Foundry | Azure OpenAI blade**, in the left pane under **Use with Foundry**, select **Azure OpenAI (1)**. Then click **+ Create (2)**, and from the dropdown, choose **Azure OpenAI (3)**.
+1. On the **Microsoft Foundry | Azure OpenAI** page, in the left pane under **Use with Foundry**, select **Azure OpenAI (1)**. Then click **+ Create (2)**, and from the dropdown, choose **Azure OpenAI (3)**.
 
     ![](./media/lab1-12-1.png)
 
@@ -52,7 +59,7 @@ Azure OpenAI offers a web-based portal called **Microsoft Foundry portal** for d
 
 1. On the **Tags** tab, leave the value as default and click on **Next** button.
 
-    ![](./media/am4.png)
+    ![](./media/E1T1S5-2804.png)
   
 1. On the **Review + submit** tab, review the configuration, and click on **Create** button.
 
@@ -72,9 +79,9 @@ Azure OpenAI offers a web-based portal called **Microsoft Foundry portal** for d
 > - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
 <validation step="76158c08-a6fe-4e2f-ba59-d6556a5a88e4" />
 
-### Deploy Models in Microsoft Foundry portal
+### Task 1.2: Deploy Models in Microsoft Foundry portal
 
-1. Go to the Azure OpenAI Overview page, and click **Go to Foundry portal** to navigate to the Microsoft Foundry portal.
+1. From the Azure OpenAI Overview page, and click **Go to Foundry portal** to navigate to the Microsoft Foundry portal.
 
     ![](./media/lab1-12-2.png)
 
@@ -132,11 +139,11 @@ Azure OpenAI offers a web-based portal called **Microsoft Foundry portal** for d
 
 In this task, you will create the required Azure resources for AI Search, Document Intelligence, and Translator services. This involves setting up each service with the correct configurations, including subscription, resource group, and pricing tier, to support the document processing pipeline.
 
-### Create AI Search Service
+### Task 2.1: Create AI Search Service
 
-1. On the Azure portal, type **AI Search (1)** in the search box and select **AI Search (2)** from the results.
+1. Navigate back to the Azure portal, type **AI Search (1)** in the search box and select **AI Search (2)** from the results.
 
-    ![](./media/am5.png)
+    ![](./media/E1T2S1-2804.png)
 
 1. On the **Microsoft Foundry | AI Search** blade, click on **+ Create**.
 
@@ -154,11 +161,13 @@ In this task, you will create the required Azure resources for AI Search, Docume
     
     - Pricing tier: **Standard (5)**
 
+      >**Note:** If you are unable to Select **Standard** pricing tier in **East US**, please select **East US 2** or **Central US** and deploy.
+
     - Click on **Review + create (6)**
 
       ![](./media/am6.png)
 
-      >**Note:** if you are not able to deploy resource in **East US** kindly select **East US 2** and deploy.
+      
 
 1. Review the configuration, and click on **Create** button.
 
@@ -170,11 +179,11 @@ In this task, you will create the required Azure resources for AI Search, Docume
 > - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
 <validation step="c27751de-8370-4a29-92b9-c79ee1e1e436" />
 
-### Create Document Intelligence Resource
+### Task 2.2: Create Document Intelligence Resource
 
 1. On the Azure portal, type **Document intelligence (1)** in the search box and select **Document intelligences (2)** from the results.
 
-    ![](./media/am7.png)
+    ![](./media/E1T2.2S1-2804.png)
 
 1. On the **Microsoft Foundry | Document intelligence** blade, click on **+ Create**.
 
@@ -204,11 +213,11 @@ In this task, you will create the required Azure resources for AI Search, Docume
 > - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
 <validation step="a4912828-00ad-4dde-83a3-75feb53266d3" />
 
-### Create Translator Resource
+### Task 2.3: Create Translator Resource
 
 1. On the Azure portal, type **Translators (1)** in the search box and select **Translators (2)** from the results.
 
-    ![](./media/lab1-12-9.png)
+    ![](./media/E1T2.3S1-2804.png)
 
 1. On the **Microsoft Foundry | Translator** blade, click on **+ Create**.
 
@@ -248,13 +257,15 @@ In this task, you will deploy Azure Functions that automate the document process
 
     ![](./media/12.png)
 
-1. Navigate to `C:\LabFiles` **(1)** and double-click on the `deploy-01.json` **(2)** file to open it. Select **Notepad (3)** and click **OK (4)**. Copy the template in Notepad for future deployment.
+1. Navigate to `C:\LabFiles` **(1)** and double-click on the `deploy-01.json` **(2)** file to open it. 
+
+1. Click on **Try an app on this PC** and select **Notepad (3)** and click **OK (4)**. Copy the template in Notepad for future deployment.
 
     ![](./media/am12.png)
 
 1. Navigate back to the Azure Portal, type **Deploy a custom template (1)** in the search box and select **Deploy a custom template (2)** from the results.
 
-    ![](./media/am13.png)
+    ![](./media/E1T3S4-2804.png)
 
 1. On the **Custom deployment** page, click on **Build your own template in the editor**.
 
@@ -298,6 +309,8 @@ In this task, you will deploy Azure Functions that automate the document process
     ![](./media/23052025(3).png)
 
 1. Once the deployment is complete, click on the **Go to resource group** button.
+
+    >**Note:** The deployment may take around 15-20 minutes to complete, as it is deploying multiple resources and Azure Functions.
 
     ![](./media/lab1-12-11.png)
 
