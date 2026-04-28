@@ -18,16 +18,16 @@ In this exercise, you will complete the following tasks:
   - Task 1.1: Deploy Azure OpenAI Resource
   - Task 1.2: Deploy Models in Microsoft Foundry portal
 - Task 2: Create Azure AI Search Resources
-  - Task 2.1: Create AI Search Service
+  - Task 2.1: Create an AI Search Service
   - Task 2.2: Create Document Intelligence Resource
   - Task 2.3: Create Translator Resource
 - Task 3: Deploy Azure Function with Embeddings  
 
 ### Task 1: Deploy Azure OpenAI Resource and Models
 
-In this task, you will begin by deploying an Azure OpenAI resource through the Azure portal. This involves creating an OpenAI resource, configuring it with the appropriate settings, and deploying models such as **gpt-4.1** and **text-embedding-ada-002** using Azure AI Foundry portal.
+In this task, you will begin by deploying an Azure OpenAI resource through the Azure portal. This involves creating an OpenAI resource, configuring it with the appropriate settings, and deploying models such as **gpt-4.1** and **text-embedding-ada-002** using the Azure AI Foundry portal.
 
-Azure OpenAI offers a web-based portal called **Microsoft Foundry portal** for deploying, managing, and exploring models. Follow these steps to deploy a model using Microsoft Foundry portal:
+Azure OpenAI offers a web-based portal called the **Microsoft Foundry portal** for deploying, managing, and exploring models. Follow these steps to deploy a model using the Microsoft Foundry portal:
 
 ### Task 1.1: Deploy Azure OpenAI Resource
 
@@ -81,7 +81,7 @@ Azure OpenAI offers a web-based portal called **Microsoft Foundry portal** for d
 
 ### Task 1.2: Deploy Models in Microsoft Foundry portal
 
-1. From the Azure OpenAI Overview page, and click **Go to Foundry portal** to navigate to the Microsoft Foundry portal.
+1. From the Azure OpenAI Overview page, click **Go to Foundry portal** to navigate to the Microsoft Foundry portal.
 
     ![](./media/lab1-12-2.png)
 
@@ -141,7 +141,7 @@ In this task, you will create the required Azure resources for AI Search, Docume
 
 ### Task 2.1: Create AI Search Service
 
-1. Navigate back to the Azure portal, type **AI Search (1)** in the search box and select **AI Search (2)** from the results.
+1. Navigate back to the Azure portal, type **AI Search (1)** in the search box, and select **AI Search (2)** from the results.
 
     ![](./media/E1T2S1-2804.png)
 
@@ -167,9 +167,7 @@ In this task, you will create the required Azure resources for AI Search, Docume
 
       ![](./media/am6.png)
 
-      
-
-1. Review the configuration, and click on **Create** button.
+1. Review the configuration, and click on the **Create** button.
 
      ![](./media/lab1-12-8.png)
 
@@ -181,7 +179,7 @@ In this task, you will create the required Azure resources for AI Search, Docume
 
 ### Task 2.2: Create Document Intelligence Resource
 
-1. On the Azure portal, type **Document intelligence (1)** in the search box and select **Document intelligences (2)** from the results.
+1. On the Azure portal, type **Document intelligence (1)** in the search box and select **Document intelligence (2)** from the results.
 
     ![](./media/E1T2.2S1-2804.png)
 
@@ -239,7 +237,7 @@ In this task, you will create the required Azure resources for AI Search, Docume
 
       ![](./media/am10.png)
     
-1. Review the configuration, and click on **Create** button.
+1. Review the configuration, and click on the **Create** button.
 
     ![](./media/am27.png)
 
@@ -263,7 +261,7 @@ In this task, you will deploy Azure Functions that automate the document process
 
     ![](./media/am12.png)
 
-1. Navigate back to the Azure Portal, type **Deploy a custom template (1)** in the search box and select **Deploy a custom template (2)** from the results.
+1. Navigate back to the Azure Portal, type **Deploy a custom template (1)** in the search box, and select **Deploy a custom template (2)** from the results.
 
     ![](./media/E1T3S4-2804.png)
 
@@ -271,7 +269,7 @@ In this task, you will deploy Azure Functions that automate the document process
 
     ![](./media/am14.png)
 
-1. Paste the template you copied in step 2, in the ARM template editor, locate the **OpenAIEngine** parameter and set the **defaultValue** **(line no: 97)** to `gpt-4.1` **(1)**. Also verify that **OpenAIDeploymentType** **(line no: 104)** is set to `Chat` **(2)**.
+1. Paste the template you copied in step 2, in the ARM template editor, locate the **OpenAIEngine** parameter and verify the **defaultValue** **(line no: 97)** is set to `gpt-4.1` **(1)**. Also verify that **OpenAIDeploymentType** **(line no: 104)** is set to `Chat` **(2)**.
 
      ![](./media/l12-12-03.png)
 
@@ -304,7 +302,7 @@ In this task, you will deploy Azure Functions that automate the document process
 
       ![](./media/lab1-12-10.png)
 
-1. Leave the other value as default and click on **Review + create** button, review the configuration, and click on **Create** button.
+1. Leave the other value as default and click on the **Review + create** button, review the configuration, and click on the **Create** button.
 
     ![](./media/23052025(3).png)
 
@@ -328,7 +326,7 @@ In this task, you will deploy Azure Functions that automate the document process
 
         - A blob trigger is set up on the Azure Function.
         - As soon as a new file is added to the specified Azure Storage container, the function is activated.
-        - This function then initiates the document extraction process using Document intelligence.
+        - This function then initiates the document extraction process using Document Intelligence.
 
     - **BatchPushResults:** Once the paragraphs are extracted from the document, this Azure Function is triggered. This function handles two tasks:
 
@@ -343,7 +341,7 @@ In this task, you will deploy Azure Functions that automate the document process
         - It then uses Azure OpenAI to generate a comprehensive answer based on the search results.
         - Finally, it returns this answer to the user.
 
-1. In the left-hand menu, select **Environment variables (1)** under **Settings** section and click on **Advanced edit (2)** at the top of the page to view or modify the environment variables.
+1. In the left-hand menu, select **Environment variables (1)** under the **Settings** section and click on **Advanced edit (2)** at the top of the page to view or modify the environment variables.
 
     ![](./media/am15.png)
 
